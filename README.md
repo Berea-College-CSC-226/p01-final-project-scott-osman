@@ -2,22 +2,18 @@
 
 ## Instructions
 
-❗️Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which 
-  they accompany. (This means that your final README should have no ❗️in it!)
+**Authors**: Scott Kirkpatrick, Osman Jalloh 
 
-❗️**Author(s)**: Your name(s) here
-
-❗️**Google Doc Link**: Your link here
-
+**Google Doc Link**: https://docs.google.com/document/d/1cApdfis-gja1YJMHgwJA3YZPHe-FNxz_uwBCb46HFF4/edit?tab=t.0
 ---
 
 ## Milestone 1: Setup, Planning, Design
 
-❗️**Title**: `What is the title of your project? Be creative! Replace this block of text.`
+️**Title**: `Turtalbet
 
-❗**Purpose**: `In a single sentence, describe WHAT your project will do. Replace this block of text.`
+**Purpose**: `Create a letter/word of the users choice using the turtles.
 
-❗️**Source Assignment(s)**: `List which original assignments you will base your project on? Replace this block of text.`
+️**Source Assignment(s)**: Seven_Turtle_Army
 
 ❗️**CRC Card(s)**:
   - Create a CRC card for each class that your project will implement.
@@ -29,15 +25,15 @@
   
 ![Don't leave me in your README!](image/crc.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
 
-❗️**Branches**: This project will **require** effective use of git. 
+️**Branches**: This project will **require** effective use of git. 
 
-❗Each partner should create a branch at the beginning of the project, and stay on this branch (or branches of their 
+Each partner should create a branch at the beginning of the project, and stay on this branch (or branches of their 
 branch) as they work. When you need to bring each others branches together, do so by merging each other's branches 
 into your own, following the process we've discussed in previous assignments, then re-branching out from the merged code.  
 
 ```
-    Branch 1 starting name: _____________
-    Branch 2 starting name: _____________
+    Branch 1 starting name: Kirkpatrickm
+    Branch 2 starting name: OsmanJ
 ```
 
 ### References 
