@@ -9,7 +9,7 @@
 
 ## Milestone 1: Setup, Planning, Design
 
-️**Title**: `Turtalbet
+️**Title**: `Turtlebet
 
 **Purpose**: `Create a letter/word of the users choice using the turtles.
 
