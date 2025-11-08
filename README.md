@@ -23,7 +23,7 @@
     README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - 
     and REPLACE it with your own:
   
-![Don't leave me in your README!](image/crc.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
+![Don't leave me in your README!](image/CRCtable.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
 
 ️**Branches**: This project will **require** effective use of git. 
 
@@ -38,7 +38,7 @@ into your own, following the process we've discussed in previous assignments, th
 
 ### References 
 
-❗Throughout this project, you will likely use outside resources. Reference all ideas which are not your own, 
+Throughout this project, you will likely use outside resources. Reference all ideas which are not your own, 
 and describe how you integrated the ideas or code into your program. This includes online sources, people who have 
 helped you, AI tools you've used, and any other resources that are not solely your own contribution. Update this 
 section as you go. DO NOT forget about it!
