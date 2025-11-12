@@ -9,11 +9,11 @@
 
 ## Milestone 1: Setup, Planning, Design
 
-️**Title**: `Turtlebet
+️**Title**: Give me the coins
 
-**Purpose**: `Create a letter/word of the users choice using the turtles.
+**Purpose**: Get as many coins in the timeframe that you can.
 
-️**Source Assignment(s)**: Seven_Turtle_Army
+️**Source Assignment(s)**: Seven_Turtle_Army, The_Legend_of_Tuna_Breath_of_Catnip
 
 ❗️**CRC Card(s)**:
   - Create a CRC card for each class that your project will implement.
@@ -23,7 +23,11 @@
     README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - 
     and REPLACE it with your own:
   
-![Don't leave me in your README!](image/CRCtable.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
+![Don't leave me in your README!](image/PlayerClass.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
+![Don't leave me in your README!](image/CounterClass.png "heheeh")
+![Don't leave me in your README!](image/CoinClass.png "heheeheee")
+![Don't leave me in your README!](image/NPCClass.png "heheehehehee")
+
 
 ️**Branches**: This project will **require** effective use of git. 
 
