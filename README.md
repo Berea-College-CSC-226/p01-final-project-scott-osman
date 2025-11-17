@@ -43,6 +43,7 @@ and describe how you integrated the ideas or code into your program. This includ
 helped you, AI tools you've used, and any other resources that are not solely your own contribution. Update this 
 section as you go. DO NOT forget about it!
 
+ https://youtu.be/y9VG3Pztok8?si=jwzufsW2BG0BC3QP 
 ---
 
 ## Milestone 2: Code Setup and Issue Queue
