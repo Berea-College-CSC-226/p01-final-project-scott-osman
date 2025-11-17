@@ -36,7 +36,7 @@ run = True  # Variable to keep screen running
 
 pygame.display.set_caption("pygames_character.png") # Crate pycham npc
 
-player = pygame.image.load("pygames_character.png")   # make sure file exists
+npc = pygame.image.load("pygames_character.png")   # make sure file exists
 
 
 while run:  # This loop keeps the screen running until user click X button.
@@ -49,7 +49,7 @@ while run:  # This loop keeps the screen running until user click X button.
 
 
     # Draw the player image
-    screen.blit(player, (50, 50)) #set the player size to
+    screen.blit(npc, (50, 50)) #set the player size to
 
     pygame.display.update()
 
