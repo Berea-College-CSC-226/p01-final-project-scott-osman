@@ -58,7 +58,10 @@ section as you go. DO NOT forget about it!
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    **Replace this text with your reflection
+    We have initialized the screen for our game as well as grabbed some sprites for our NPC to use. 
+    We are feeling alirght about pacing as it took us about 2 hours to do that which is fair. Most of our time has been with planning so far.
+    We are worried about a couple things; one is working with pygames as neither of us are to familair with it so it has been an adjustment, we are also both pretty busy so time managment has been rough.
+    Not many suprises so far. We're a little nervous about this project but it should be managable.
 ```
 
 ---
