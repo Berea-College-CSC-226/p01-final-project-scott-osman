@@ -31,7 +31,9 @@ class Game:
                 if event.type == pygame.QUIT:
                     self.run = False
             self.screen.fill((255, 255, 255))
+            #Keeps screen updating with game
             self.screen.blit(self.npc1.surf, (250, 250))
+            #Puts the NPC's current position on the screen.
             pygame.display.update()
         pygame.quit()
 
