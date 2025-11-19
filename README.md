@@ -1,6 +1,6 @@
 # CSC226 Final Project
 
-## Instructions
+## Instructions 
 
 **Authors**: Scott Kirkpatrick, Osman Jalloh 
 
