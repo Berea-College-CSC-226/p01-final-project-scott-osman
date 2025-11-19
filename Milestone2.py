@@ -17,10 +17,12 @@ class Game:
         #Initializes the game
         self.screen = pygame.display.set_mode((800, 600))
         #Sets the screen size for the game
-        self.screen.fill((255,255,255))
+        self.screen.fill((255, 0, 0))
         #Sets the screen color for the game(white for now probably change in the future)
         self.run = True
         #Makes the game currently set to run
+        self.npc1 = NPC()
+
 
     def game_time(self):
         #Main loop for the game to run essentially saying while the game is running doe everything within this.
@@ -28,8 +30,16 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.run = False
+            self.screen.fill((255, 255, 255))
+            self.screen.blit(self.npc1.surf, (250, 250))
             pygame.display.update()
         pygame.quit()
+
+class NPC:
+
+    def __init__(self):
+        self.surf = pygame.image.load("pygames_character.png")
+        pygame.display.set_caption("pygames_character.png")
 
 def main():
 
