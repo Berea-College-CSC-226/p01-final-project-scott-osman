@@ -65,10 +65,27 @@
 #
 
 import pygame
-pygame.init()
-#screen = pygame.display.set_mode((800, 600))
 
-class game_setup:
-
-
+class Game:
     def __init__(self):
+        pygame.init()
+        self.screen = pygame.display.set_mode((800, 600))
+        self.screen.fill((255,255,255))
+        self.run = True
+
+    def game_time(self):
+        while self.run:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.run = False
+            pygame.display.update()
+        pygame.quit()
+
+def main():
+
+    game = Game()
+    game.game_time()
+
+if __name__ == "__main__":
+
+    main()
