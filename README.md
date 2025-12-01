@@ -1,72 +1,44 @@
-[//]: # (# CSC226 Final Project)
+# CSC226 Final Project
 
-[//]: # ()
-[//]: # (## Instructions )
+## Instructions 
 
-[//]: # ()
-[//]: # (**Authors**: Scott Kirkpatrick, Osman Jalloh )
+**Authors**: Scott Kirkpatrick, Osman Jalloh 
 
-[//]: # ()
-[//]: # (**Google Doc Link**: https://docs.google.com/document/d/1cApdfis-gja1YJMHgwJA3YZPHe-FNxz_uwBCb46HFF4/edit?tab=t.0)
+**Google Doc Link**: https://docs.google.com/document/d/1cApdfis-gja1YJMHgwJA3YZPHe-FNxz_uwBCb46HFF4/edit?tab=t.0
+---
 
-[//]: # (---)
+## Milestone 1: Setup, Planning, Design
 
-[//]: # ()
-[//]: # (## Milestone 1: Setup, Planning, Design)
+️**Title**: Give me the coins
 
-[//]: # ()
-[//]: # (️**Title**: Give me the coins)
+**Purpose**: Get as many coins in the timeframe that you can.
 
-[//]: # ()
-[//]: # (**Purpose**: Get as many coins in the timeframe that you can.)
+️**Source Assignment(s)**: Seven_Turtle_Army, The_Legend_of_Tuna_Breath_of_Catnip
 
-[//]: # ()
-[//]: # (️**Source Assignment&#40;s&#41;**: Seven_Turtle_Army, The_Legend_of_Tuna_Breath_of_Catnip)
+❗️**CRC Card(s)**:
+  - Create a CRC card for each class that your project will implement.
+  - See this link for a sample CRC card and a template to use for your own cards (you will have to make a copy to edit):
+    [CRC Card Example](https://docs.google.com/document/d/1JE_3Qmytk_JGztRqkPXWACJwciPH61VCx3idIlBCVFY/edit?usp=sharing)
+  - Tables in markdown are not easy, so we suggest saving your CRC card as an image and including the image(s) in the 
+    README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - 
+    and REPLACE it with your own:
+  
+![Don't leave me in your README!](image/PlayerClass.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
+![Don't leave me in your README!](image/CounterClass.png "heheeh")
+![Don't leave me in your README!](image/CoinClass.png "heheeheee")
+![Don't leave me in your README!](image/NPCClass.png "heheehehehee")
 
-[//]: # ()
-[//]: # (❗️**CRC Card&#40;s&#41;**:)
 
-[//]: # (  - Create a CRC card for each class that your project will implement.)
+️**Branches**: This project will **require** effective use of git. 
 
-[//]: # (  - See this link for a sample CRC card and a template to use for your own cards &#40;you will have to make a copy to edit&#41;:)
+Each partner should create a branch at the beginning of the project, and stay on this branch (or branches of their 
+branch) as they work. When you need to bring each others branches together, do so by merging each other's branches 
+into your own, following the process we've discussed in previous assignments, then re-branching out from the merged code.  
 
-[//]: # (    [CRC Card Example]&#40;https://docs.google.com/document/d/1JE_3Qmytk_JGztRqkPXWACJwciPH61VCx3idIlBCVFY/edit?usp=sharing&#41;)
-
-[//]: # (  - Tables in markdown are not easy, so we suggest saving your CRC card as an image and including the image&#40;s&#41; in the )
-
-[//]: # (    README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - )
-
-[//]: # (    and REPLACE it with your own:)
-
-[//]: # (  )
-[//]: # (![Don't leave me in your README!]&#40;image/PlayerClass.png "Image of CRC card as an example. Upload your CRC card&#40;s&#41; in place of this one. "&#41;)
-
-[//]: # (![Don't leave me in your README!]&#40;image/CounterClass.png "heheeh"&#41;)
-
-[//]: # (![Don't leave me in your README!]&#40;image/CoinClass.png "heheeheee"&#41;)
-
-[//]: # (![Don't leave me in your README!]&#40;image/NPCClass.png "heheehehehee"&#41;)
-
-[//]: # ()
-[//]: # ()
-[//]: # (️**Branches**: This project will **require** effective use of git. )
-
-[//]: # ()
-[//]: # (Each partner should create a branch at the beginning of the project, and stay on this branch &#40;or branches of their )
-
-[//]: # (branch&#41; as they work. When you need to bring each others branches together, do so by merging each other's branches )
-
-[//]: # (into your own, following the process we've discussed in previous assignments, then re-branching out from the merged code.  )
-
-[//]: # ()
-[//]: # (```)
-
-[//]: # (    Branch 1 starting name: Kirkpatrickm)
-
-[//]: # (    Branch 2 starting name: OsmanJ)
-
-[//]: # (```)
-
+```
+    Branch 1 starting name: Kirkpatrickm
+    Branch 2 starting name: OsmanJ
+```
 ### References 
 
 Throughout this project, you will likely use outside resources. Reference all ideas which are not your own, 
@@ -76,6 +48,7 @@ section as you go. DO NOT forget about it!
 
  https://youtu.be/y9VG3Pztok8?si=jwzufsW2BG0BC3QP 
 https://www.programiz.com/python-programming/time
+https://www.bing.com/videos/riverview/relatedvideo?q=how+to+create+boundries+in+python&mid=F079186172C5B21E8B9BF079186172C5B21E8B9B&FORM=VIRE
 ---
 
 ## Milestone 2: Code Setup and Issue Queue
