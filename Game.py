@@ -69,6 +69,7 @@ class Player:
     def __init__(self):
         # Loads the image file and keeps transparency.
         self.surf = pygame.image.load("pygames_character.png").convert_alpha()
+        self.rect = self.surf.get_rect()
 
         # Starting x and y position of the player.
         self.x = 250
@@ -94,6 +95,17 @@ class Player:
         # Move down when DOWN arrow key is pressed.
         if keys[pygame.K_DOWN]:
             self.y += self.speed
+
+        if self.x < -60:
+            self.x += self.speed
+        if self.x > 680:
+            self.x -= self.speed
+        if self.y > -70:
+            self.y -= self.speed
+        if self.y < 420:
+            self.y += self.speed
+        #Keeps the player within the walls of th game.
+
 class Timer:
      def __init__(self, start):
         self.time_left = start
