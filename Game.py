@@ -52,32 +52,40 @@ class NPC:
 
     def __init__(self):
         self.surf = pygame.image.load("pygames_character.png")
+        self.rect = self.surf.get_rect()
         pygame.display.set_caption("pygames_character.png")
 
 
 
 class Timer:
     def __init__(self, start):
-        self.start = start
         self.time_left = start
-        self.last_time = time.time()
+        #Makes the start the value listed when calling this class in the game(right now 30)
+        self.time = time.time()
+        #Saves the current number of seconds passing
 
     def update(self):
 
         current_time = time.time()
+        #Records the current time it actually is, which is why the countdown works.
 
-        if current_time - self.last_time >= 1:
+        if current_time - self.time >= 1:
             self.time_left -= 1
-            self.last_time = current_time
+            self.time = current_time
+        #This keeps the clock going down as long as the two values arnt the same and keeps updating the time.
 
         if self.time_left <0:
             self.time_left = 0
+        #This stops it from ever being negative
 
     def display(self,screen):
 
         font = pygame.font.SysFont("arial", 30)
+        #Gives the clock a font
         timer_screen = font.render(str(self.time_left), True, (0, 0, 0))
+        #Gives the font a color, makes it true, and gives it the string to put at the top in this case being the timer
         screen.blit(timer_screen, (10, 10))
+        #Puts it onto the screen with 10,10 being the size.
 
 
 

@@ -48,6 +48,7 @@ helped you, AI tools you've used, and any other resources that are not solely yo
 section as you go. DO NOT forget about it!
 
  https://youtu.be/y9VG3Pztok8?si=jwzufsW2BG0BC3QP 
+https://www.programiz.com/python-programming/time
 ---
 
 ## Milestone 2: Code Setup and Issue Queue
