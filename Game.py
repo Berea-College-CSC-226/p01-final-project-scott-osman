@@ -9,12 +9,15 @@
 #             Subtask I.A.4: Use turtle.screen to create a screen.*
 #             Subtask I.A.5: Set screen width and height.*
 
-import pygame
+import pygame, time
 
 class Game:
     def __init__(self):
         pygame.init()
         #Initializes the game
+        pygame.font.init()
+        #Initializes the font for pygame
+
         self.screen = pygame.display.set_mode((800, 600))
         #Sets the screen size for the game
         self.screen.fill((255, 0, 0))
@@ -22,6 +25,10 @@ class Game:
         self.run = True
         #Makes the game currently set to run
         self.npc1 = NPC()
+        #Creates the timer
+
+        self.timer = Timer(30)
+        #Calls the timer class
 
 
     def game_time(self):
@@ -30,10 +37,14 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.run = False
+            self.timer.update()
+            #calls the update part of the timer class to make sure its updating it while the game is running
             self.screen.fill((255, 255, 255))
             #Keeps screen updating with game
             self.screen.blit(self.npc1.surf, (250, 250))
             #Puts the NPC's current position on the screen.
+            self.timer.display(self.screen)
+            # Displays it the timer after the screen is drawn, you have to keep it here or it wont display.
             pygame.display.update()
         pygame.quit()
 
@@ -42,6 +53,34 @@ class NPC:
     def __init__(self):
         self.surf = pygame.image.load("pygames_character.png")
         pygame.display.set_caption("pygames_character.png")
+
+
+
+class Timer:
+    def __init__(self, start):
+        self.start = start
+        self.time_left = start
+        self.last_time = time.time()
+
+    def update(self):
+
+        current_time = time.time()
+
+        if current_time - self.last_time >= 1:
+            self.time_left -= 1
+            self.last_time = current_time
+
+        if self.time_left <0:
+            self.time_left = 0
+
+    def display(self,screen):
+
+        font = pygame.font.SysFont("arial", 30)
+        timer_screen = font.render(str(self.time_left), True, (0, 0, 0))
+        screen.blit(timer_screen, (10, 10))
+
+
+
 
 def main():
 
