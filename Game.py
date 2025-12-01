@@ -10,7 +10,7 @@
 '''
 
 
-import pygame
+import pygame, time, random
 
 class Game:
     def __init__(self):
@@ -25,8 +25,11 @@ class Game:
         # Boolean that controls whether the game loop is running.
         self.run = True
 
-        # Creates an NPC object (defined below).
-        self.npc1 = NPC()
+        # Creates an player object (defined below).
+        self.player = Player()
+
+        self.timer = Timer(30)
+        #Creates the timer object
 
     def game_time(self):
         # The loop keeps running as long as self.run is True.
@@ -37,37 +40,44 @@ class Game:
                 if event.type == pygame.QUIT:
                     self.run = False
 
+
             # Detects which keys are currently being pressed.
             keys = pygame.key.get_pressed()
 
-            # Moves the NPC based on the pressed keys.
-            self.npc1.move(keys)
+            # Moves the player based on the pressed keys.
+            self.player.move(keys)
+            self.timer.update()
 
             # Fills the screen with white (resets background each frame).
             self.screen.fill((255, 255, 255))
 
-            # Draws the NPC image at its current (x, y) position.
-            self.screen.blit(self.npc1.surf, (self.npc1.x, self.npc1.y))
+            # Draws the player image at its current (x, y) position.
+            self.screen.blit(self.player.surf, (self.player.x, self.player.y))
+
+            #Displays the timer over the screen
+            self.timer.display(self.screen)
 
             # Updates the display so the player sees changes.
             pygame.display.update()
 
+
+
         # When the loop ends, pygame shuts down.
         pygame.quit()
 
-class NPC:
+class Player:
     def __init__(self):
         # Loads the image file and keeps transparency.
         self.surf = pygame.image.load("pygames_character.png").convert_alpha()
 
-        # Starting x and y position of the NPC.
+        # Starting x and y position of the player.
         self.x = 250
         self.y = 250
 
-        # How many pixels the NPC moves each frame.
-        self.speed = 0.2
+        # How many pixels the player moves each frame.
+        self.speed = 0.5
 
-    # Movement function for NPC
+    # Movement function for player
     def move(self, keys):
         # Move left when the LEFT arrow key is pressed.
         if keys[pygame.K_LEFT]:
@@ -84,6 +94,30 @@ class NPC:
         # Move down when DOWN arrow key is pressed.
         if keys[pygame.K_DOWN]:
             self.y += self.speed
+class Timer:
+     def __init__(self, start):
+        self.time_left = start
+        #Makes the start the value listed when calling this class in the game(right now 30)
+        self.time = time.time()
+        #Saves the current number of seconds passing
+     def update(self):
+        current_time = time.time()
+        #Records the current time it actually is, which is why the countdown works.
+        if current_time - self.time >= 1:
+            self.time_left -= 1
+            self.time = current_time
+            #This keeps the clock going down as long as the two values arnt the same and keeps updating the time.
+        if self.time_left < 0:
+           self.time_left = 0
+           #This stops it from ever being negative
+     def display(self, screen):
+         font = pygame.font.SysFont("arial", 30)
+         #Gives the clock a font
+         timer_screen = font.render(str(self.time_left), True, (0, 0, 0))
+         # Gives the font a color, makes it true, and gives it the string to put at the top in this case being the timer
+         screen.blit(timer_screen, (10, 10))
+         # Puts it onto the screen with 10,10 being the size.
+
 
 def main():
     game = Game()   # Creates the Game object.
