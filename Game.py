@@ -16,8 +16,10 @@ class Game:
     def __init__(self):
         pygame.init()  # Initializes all pygame modules.
 
+
+        self.size = 800, 600
         # Creates the game window with width 800 and height 600.
-        self.screen = pygame.display.set_mode((800, 600))
+        self.screen = pygame.display.set_mode(self.size)
 
         # Sets the title text that appears at the top of the window.
         pygame.display.set_caption("NPC Movement Game")
@@ -28,7 +30,7 @@ class Game:
         # Creates an player object (defined below).
         self.player = Player()
 
-        self.timer = Timer(30)
+        self.timer = Timer(15)
         #Creates the timer object
 
     def game_time(self):
@@ -65,11 +67,14 @@ class Game:
         # When the loop ends, pygame shuts down.
         pygame.quit()
 
-class Player:
+class Player(pygame.sprite.Sprite):
     def __init__(self):
+
+        super().__init__()
         # Loads the image file and keeps transparency.
         self.surf = pygame.image.load("pygames_character.png").convert_alpha()
         self.rect = self.surf.get_rect()
+        #self.rect.move_ip(100,100)
 
         # Starting x and y position of the player.
         self.x = 250
@@ -104,7 +109,7 @@ class Player:
             self.y -= self.speed
         if self.y < 420:
             self.y += self.speed
-        #Keeps the player within the walls of th game.
+        #Keeps the player within the walls of the game.
 
 class Timer:
      def __init__(self, start):
@@ -129,6 +134,8 @@ class Timer:
          # Gives the font a color, makes it true, and gives it the string to put at the top in this case being the timer
          screen.blit(timer_screen, (10, 10))
          # Puts it onto the screen with 10,10 being the size.
+
+
 
 
 def main():
