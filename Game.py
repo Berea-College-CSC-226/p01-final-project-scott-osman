@@ -60,8 +60,8 @@ class Game:
 
             # Draws the player image at its current (x, y) position.
             self.screen.blit(self.player.surf, (self.player.x, self.player.y))
-            self.screen.blit(self.npc.surf, (self.player.x, self.player.y))
-            self.screen.blit(self.coin.surf, (self.player.x, self.player.y))
+            self.screen.blit(self.npc.surf, (self.npc.x, self.npc.y))
+            self.screen.blit(self.coin.surf, (self.coin.x, self.coin.y))
 
 
             #Displays the timer over the screen
