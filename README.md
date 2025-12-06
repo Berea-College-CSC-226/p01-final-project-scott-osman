@@ -1,23 +1,19 @@
 # CSC226 Final Project
 
-## Instructions
+## Instructions 
 
-❗️Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which 
-  they accompany. (This means that your final README should have no ❗️in it!)
+**Authors**: Scott Kirkpatrick, Osman Jalloh 
 
-❗️**Author(s)**: Your name(s) here
-
-❗️**Google Doc Link**: Your link here
-
+**Google Doc Link**: https://docs.google.com/document/d/1cApdfis-gja1YJMHgwJA3YZPHe-FNxz_uwBCb46HFF4/edit?tab=t.0
 ---
 
 ## Milestone 1: Setup, Planning, Design
 
-❗️**Title**: `What is the title of your project? Be creative! Replace this block of text.`
+️**Title**: Give me the coins
 
-❗**Purpose**: `In a single sentence, describe WHAT your project will do. Replace this block of text.`
+**Purpose**: Get as many coins in the timeframe that you can.
 
-❗️**Source Assignment(s)**: `List which original assignments you will base your project on? Replace this block of text.`
+️**Source Assignment(s)**: Seven_Turtle_Army, The_Legend_of_Tuna_Breath_of_Catnip
 
 ❗️**CRC Card(s)**:
   - Create a CRC card for each class that your project will implement.
@@ -27,26 +23,32 @@
     README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - 
     and REPLACE it with your own:
   
-![Don't leave me in your README!](image/crc.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
+![Don't leave me in your README!](image/PlayerClass.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
+![Don't leave me in your README!](image/CounterClass.png "heheeh")
+![Don't leave me in your README!](image/CoinClass.png "heheeheee")
+![Don't leave me in your README!](image/NPCClass.png "heheehehehee")
 
-❗️**Branches**: This project will **require** effective use of git. 
 
-❗Each partner should create a branch at the beginning of the project, and stay on this branch (or branches of their 
+️**Branches**: This project will **require** effective use of git. 
+
+Each partner should create a branch at the beginning of the project, and stay on this branch (or branches of their 
 branch) as they work. When you need to bring each others branches together, do so by merging each other's branches 
 into your own, following the process we've discussed in previous assignments, then re-branching out from the merged code.  
 
 ```
-    Branch 1 starting name: _____________
-    Branch 2 starting name: _____________
+    Branch 1 starting name: Kirkpatrickm
+    Branch 2 starting name: OsmanJ
 ```
-
 ### References 
 
-❗Throughout this project, you will likely use outside resources. Reference all ideas which are not your own, 
+Throughout this project, you will likely use outside resources. Reference all ideas which are not your own, 
 and describe how you integrated the ideas or code into your program. This includes online sources, people who have 
 helped you, AI tools you've used, and any other resources that are not solely your own contribution. Update this 
 section as you go. DO NOT forget about it!
 
+ https://youtu.be/y9VG3Pztok8?si=jwzufsW2BG0BC3QP 
+https://www.programiz.com/python-programming/time
+https://www.bing.com/videos/riverview/relatedvideo?q=how+to+create+boundries+in+python&mid=F079186172C5B21E8B9BF079186172C5B21E8B9B&FORM=VIRE
 ---
 
 ## Milestone 2: Code Setup and Issue Queue
@@ -57,23 +59,27 @@ section as you go. DO NOT forget about it!
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    **Replace this text with your reflection
+    We have initialized the screen for our game as well as grabbed some sprites for our NPC to use. 
+    We are feeling alirght about pacing as it took us about 2 hours to do that which is fair. Most of our time has been with planning so far.
+    We are worried about a couple things; one is working with pygames as neither of us are to familair with it so it has been an adjustment, we are also both pretty busy so time managment has been rough.
+    Not many suprises so far. We're a little nervous about this project but it should be managable.
 ```
 
 ---
 
 ## Milestone 3: Virtual Check-In
 
-❗Indicate what percentage of the project you have left to complete and how confident you feel. 
+Indicate what percentage of the project you have left to complete and how confident you feel. 
 
-❗️**Completion Percentage**: `0 - 100%`
+**Completion Percentage**: `55%`
 
-❗️**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
+**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
   strategies you can employ to increase the likelihood that you'll be successful in completing this project 
   before the deadline.
 
 ```
-    **Replace this with your reflection
+    **We should be able to finish the project as long as we have no significant issues with duplicating the NPC which sounds difficult.
+    We need to have more effective communication as well as more efficent coding sessions.
 ```
 
 ---
@@ -84,6 +90,8 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 ❗In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
 in PyCharm. 
+
+    **
 
 ### ❗Errors and Constraints
 
