@@ -27,8 +27,13 @@ class Game:
         # Boolean that controls whether the game loop is running.
         self.run = True
 
-        # Creates an player object (defined below).
+        # Creates an player object .
         self.player = Player()
+
+        # creating coin and player objects
+        self.coin = Coin()
+        self.npc = NPC()
+
 
         self.timer = Timer(15)
         #Creates the timer object
@@ -55,6 +60,9 @@ class Game:
 
             # Draws the player image at its current (x, y) position.
             self.screen.blit(self.player.surf, (self.player.x, self.player.y))
+            self.screen.blit(self.npc.surf, (self.player.x, self.player.y))
+            self.screen.blit(self.coin.surf, (self.player.x, self.player.y))
+
 
             #Displays the timer over the screen
             self.timer.display(self.screen)
@@ -72,7 +80,9 @@ class Player(pygame.sprite.Sprite):
 
         super().__init__()
         # Loads the image file and keeps transparency.
-        self.surf = pygame.image.load("pygames_character.png").convert_alpha()
+        original_image = pygame.image.load("pygames_character.png").convert_alpha()
+        self.surf = pygame.transform.scale(original_image, (135, 135))
+
         self.rect = self.surf.get_rect()
         #self.rect.move_ip(100,100)
 
@@ -82,6 +92,7 @@ class Player(pygame.sprite.Sprite):
 
         # How many pixels the player moves each frame.
         self.speed = 0.5
+
 
     # Movement function for player
     def move(self, keys):
@@ -111,6 +122,39 @@ class Player(pygame.sprite.Sprite):
             self.y += self.speed
         #Keeps the player within the walls of the game.
 
+class NPC(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+
+        # Load image
+        original_image = pygame.image.load("RealNPC.png.png").convert_alpha()
+
+        ## Reduce size of original image
+
+        self.surf = pygame.transform.scale(original_image, (40, 60))
+
+        # Get rect
+        self.rect = self.surf.get_rect()
+
+        # Starting position
+        self.x = 400
+        self.y = 100
+
+
+class Coin():
+    def __init__(self):
+
+        super().__init__()
+        original_image = pygame.image.load("coin.png.png").convert_alpha()
+
+        self.surf = pygame.transform.scale(original_image, (30, 30))
+
+        self.rect = self.surf.get_rect()
+
+        # Starting x and y position of the player.
+        self.x = 120
+        self.y = 380
+
 class Timer:
      def __init__(self, start):
         self.time_left = start
@@ -134,8 +178,6 @@ class Timer:
          # Gives the font a color, makes it true, and gives it the string to put at the top in this case being the timer
          screen.blit(timer_screen, (10, 10))
          # Puts it onto the screen with 10,10 being the size.
-
-
 
 
 def main():
