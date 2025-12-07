@@ -35,7 +35,7 @@ class Game:
         self.npc = NPC()
 
 
-        self.timer = Timer(15)
+        self.timer = Timer(30)
         #Creates the timer object
 
     def game_time(self):
@@ -56,6 +56,9 @@ class Game:
             self.player.move(keys)
             self.timer.update()
 
+            if self.timer.time_left == 0:
+                self.run = False
+
             # Fills the screen with white (resets background each frame).
             self.screen.fill((255, 255, 255))
 
@@ -67,6 +70,7 @@ class Game:
             self.screen.blit(self.coin.surf, (self.coin.x, self.coin.y))
             self.coin.rect.topleft = (self.coin.x, self.coin.y)
 
+            #Tests to see if collisions are working
             if pygame.sprite.collide_rect(self.player, self.npc):
                 font = pygame.font.SysFont("comicsans", 30)
                 txt = font.render("oooohhh", True, (0, 0, 0))
