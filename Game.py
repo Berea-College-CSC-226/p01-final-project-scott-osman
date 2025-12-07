@@ -38,6 +38,9 @@ class Game:
         self.timer = Timer(30)
         #Creates the timer object
 
+        # Creates the score
+        self.score = Score()
+
     def game_time(self):
         # The loop keeps running as long as self.run is True.
         while self.run:
@@ -64,6 +67,7 @@ class Game:
 
             # Draws the player image at its current (x, y) position. Also updates the rectangle with it.
             self.screen.blit(self.player.surf, (self.player.x, self.player.y))
+            #Also updating the rectangle with it.
             self.player.rect.topleft = (self.player.x, self.player.y)
             self.screen.blit(self.npc.surf, (self.npc.x, self.npc.y))
             self.npc.rect.topleft = (self.npc.x, self.npc.y)
@@ -72,17 +76,20 @@ class Game:
 
             #Tests to see if collisions are working
             if pygame.sprite.collide_rect(self.player, self.npc):
-                font = pygame.font.SysFont("comicsans", 30)
+                font = pygame.font.SysFont("arial", 30)
                 txt = font.render("oooohhh", True, (0, 0, 0))
                 self.screen.blit(txt, (self.size[0]//2-50, self.size[1]-50))
             elif pygame.sprite.collide_rect(self.player, self.coin):
-                font = pygame.font.SysFont("comicsans", 30)
-                txt = font.render("good job", True, (0, 0, 0))
-                self.screen.blit(txt, (self.size[0]//2-50, self.size[1]-50))
+                self.score.add_point()
+                #Moves it to a new random location
+                self.coin.x = random.randint(0,770)
+                self.coin.y = random.randint(0,570)
+                self.coin.rect.topleft = (self.coin.x, self.coin.y)
 
 
-            #Displays the timer over the screen
+            #Displays the timer and score over the screen
             self.timer.display(self.screen)
+            self.score.display(self.screen)
 
             # Updates the display so the player sees changes.
             pygame.display.update()
@@ -109,7 +116,7 @@ class Player(pygame.sprite.Sprite):
         self.y = 250
 
         # How many pixels the player moves each frame.
-        self.speed = 0.5
+        self.speed = 1
 
 
     # Movement function for player
@@ -196,6 +203,21 @@ class Timer:
          # Gives the font a color, makes it true, and gives it the string to put at the top in this case being the timer
          screen.blit(timer_screen, (10, 10))
          # Puts it onto the screen with 10,10 being the size.
+
+
+class Score:
+    def __init__(self):
+        #initializes value
+         self.value = 0
+
+    def add_point(self):
+        #When called updates the score by one.
+        self.value += 1
+
+    def display(self, screen):
+         font = pygame.font.SysFont("arial", 30)
+         txt = font.render("Score: " + str(self.value), True, (0, 0, 0))
+         screen.blit(txt, (60, 10))
 
 
 def main():
