@@ -48,6 +48,7 @@ class Game:
                     self.run = False
 
 
+
             # Detects which keys are currently being pressed.
             keys = pygame.key.get_pressed()
 
@@ -58,10 +59,22 @@ class Game:
             # Fills the screen with white (resets background each frame).
             self.screen.fill((255, 255, 255))
 
-            # Draws the player image at its current (x, y) position.
+            # Draws the player image at its current (x, y) position. Also updates the rectangle with it.
             self.screen.blit(self.player.surf, (self.player.x, self.player.y))
+            self.player.rect.topleft = (self.player.x, self.player.y)
             self.screen.blit(self.npc.surf, (self.npc.x, self.npc.y))
+            self.npc.rect.topleft = (self.npc.x, self.npc.y)
             self.screen.blit(self.coin.surf, (self.coin.x, self.coin.y))
+            self.coin.rect.topleft = (self.coin.x, self.coin.y)
+
+            if pygame.sprite.collide_rect(self.player, self.npc):
+                font = pygame.font.SysFont("comicsans", 30)
+                txt = font.render("oooohhh", True, (0, 0, 0))
+                self.screen.blit(txt, (self.size[0]//2-50, self.size[1]-50))
+            elif pygame.sprite.collide_rect(self.player, self.coin):
+                font = pygame.font.SysFont("comicsans", 30)
+                txt = font.render("good job", True, (0, 0, 0))
+                self.screen.blit(txt, (self.size[0]//2-50, self.size[1]-50))
 
 
             #Displays the timer over the screen
@@ -85,6 +98,7 @@ class Player(pygame.sprite.Sprite):
 
         self.rect = self.surf.get_rect()
         #self.rect.move_ip(100,100)
+
 
         # Starting x and y position of the player.
         self.x = 250
@@ -112,13 +126,13 @@ class Player(pygame.sprite.Sprite):
         if keys[pygame.K_DOWN]:
             self.y += self.speed
 
-        if self.x < -60:
+        if self.x < -50:
             self.x += self.speed
-        if self.x > 680:
+        if self.x > 710:
             self.x -= self.speed
-        if self.y > -70:
+        if self.y > -40:
             self.y -= self.speed
-        if self.y < 420:
+        if self.y < 500:
             self.y += self.speed
         #Keeps the player within the walls of the game.
 
