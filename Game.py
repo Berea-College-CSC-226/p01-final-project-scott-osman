@@ -38,7 +38,7 @@ class Game:
         self.spawn_timer = 0
 
 
-        self.timer = Timer(30)
+        self.timer = Timer(1)
         #Creates the timer object
 
         # Creates the score
@@ -60,6 +60,7 @@ class Game:
 
             # Detects which keys are currently being pressed.
             if self.game_over:
+                self.screen.fill((255,255,255))
                 self.display_game_over()
                 pygame.display.update()
                 continue
@@ -128,9 +129,12 @@ class Game:
 
 
     def display_game_over(self):
-        font = pygame.font.SysFont("arial", 30)
+        font = pygame.font.SysFont("arial", 80)
+        subfont = pygame.font.SysFont("arial", 80)
         txt = font.render("GAME OVER", True, (0, 0, 0))
-        self.screen.blit(txt, (self.size[0]//2-50, self.size[1]-50))
+        self.screen.blit(txt, (self.size[0]//2-300, self.size[1]-500))
+        score_txt = subfont.render("Final Score:", True, (0, 0, 0))
+        self.screen.blit(score_txt, (self.size[0]//2-300, self.size[1]-300))
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
