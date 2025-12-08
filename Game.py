@@ -32,7 +32,10 @@ class Game:
 
         # creating coin and player objects
         self.coin = Coin()
-        self.npc = NPC()
+
+        #Initialize the NPC as a list so it can hold all of the ones created. Not sure how to do it otherwise.
+        self.npcs = [NPC()]
+        self.spawn_timer = 0
 
 
         self.timer = Timer(30)
@@ -59,8 +62,13 @@ class Game:
             self.player.move(keys)
             self.timer.update()
 
-            #NPC movement call
-            self.npc.movement()
+            #Adding NPCS
+            self.spawn_timer += 1
+            #Seems to be around 5 seconds
+            if self.spawn_timer > 600:
+                self.spawn_timer = 0
+                self.npcs.append(NPC())
+
 
             if self.timer.time_left == 0:
                 self.run = False
@@ -68,25 +76,30 @@ class Game:
             # Fills the screen with white (resets background each frame).
             self.screen.fill((255, 255, 255))
 
+            #This calls the NPC movment while also making sure to update the new ones to the screen
+            for npc in self.npcs:
+                npc.movement()
+                self.screen.blit(npc.surf, (npc.x, npc.y))
+                npc.rect.topleft = (npc.x, npc.y)
+
             # Draws the player image at its current (x, y) position. Also updates the rectangle with it.
             self.screen.blit(self.player.surf, (self.player.x, self.player.y))
             #Also updating the rectangle with it.
             self.player.rect.topleft = (self.player.x, self.player.y)
-
-            #NPC
-            self.screen.blit(self.npc.surf, (self.npc.x, self.npc.y))
-            self.npc.rect.topleft = (self.npc.x, self.npc.y)
 
             #Coin
             self.screen.blit(self.coin.surf, (self.coin.x, self.coin.y))
             self.coin.rect.topleft = (self.coin.x, self.coin.y)
 
             #Tests to see if collisions are working
-            if pygame.sprite.collide_rect(self.player, self.npc):
-                font = pygame.font.SysFont("arial", 30)
-                txt = font.render("oooohhh", True, (0, 0, 0))
-                self.screen.blit(txt, (self.size[0]//2-50, self.size[1]-50))
-            elif pygame.sprite.collide_rect(self.player, self.coin):
+            for npc in self.npcs:
+                if pygame.sprite.collide_rect(self.player, npc):
+                    font = pygame.font.SysFont("arial", 30)
+                    txt = font.render("oooohhh", True, (0, 0, 0))
+                    self.screen.blit(txt, (self.size[0]//2-50, self.size[1]-50))
+
+            #Coin collision
+            if pygame.sprite.collide_rect(self.player, self.coin):
                 self.score.add_point()
                 #Moves it to a new random location
                 self.coin.x = random.randint(0,770)
