@@ -59,6 +59,9 @@ class Game:
             self.player.move(keys)
             self.timer.update()
 
+            #NPC movement call
+            self.npc.movement()
+
             if self.timer.time_left == 0:
                 self.run = False
 
@@ -69,8 +72,12 @@ class Game:
             self.screen.blit(self.player.surf, (self.player.x, self.player.y))
             #Also updating the rectangle with it.
             self.player.rect.topleft = (self.player.x, self.player.y)
+
+            #NPC
             self.screen.blit(self.npc.surf, (self.npc.x, self.npc.y))
             self.npc.rect.topleft = (self.npc.x, self.npc.y)
+
+            #Coin
             self.screen.blit(self.coin.surf, (self.coin.x, self.coin.y))
             self.coin.rect.topleft = (self.coin.x, self.coin.y)
 
@@ -116,7 +123,7 @@ class Player(pygame.sprite.Sprite):
         self.y = 250
 
         # How many pixels the player moves each frame.
-        self.speed = 1
+        self.speed = 3
 
 
     # Movement function for player
@@ -153,17 +160,45 @@ class NPC(pygame.sprite.Sprite):
 
         # Load image
         original_image = pygame.image.load("RealNPC.png.png").convert_alpha()
-
         ## Reduce size of original image
-
         self.surf = pygame.transform.scale(original_image, (40, 60))
-
         # Get rect
         self.rect = self.surf.get_rect()
 
         # Starting position
         self.x = 400
         self.y = 100
+        self.speed = .8
+
+        self.directions = ['north', 'south', 'east', 'west']
+        self.path = random.choice(self.directions)
+
+    def get_direction(self):
+        #Send in the other direction if on the wall to keep character confined within the screen
+        if self.y <= 0:
+            self.path = 'south'
+        elif self.y >= 500:
+            self.path = 'north'
+        elif self.x <= 0:
+            self.path = 'east'
+        elif self.x >= 600:
+            self.path = 'west'
+        #Chances of them switching direction
+        elif random.random() > .97:
+            self.path = random.choice(self.directions)
+
+    def movement(self):
+        if self.path == 'north':
+            self.y -= self.speed
+        elif self.path == 'south':
+            self.y += self.speed
+        elif self.path == 'east':
+            self.x += self.speed
+        elif self.path == 'west':
+            self.x -= self.speed
+        self.rect.topleft = (self.x, self.y)
+        #Calls a direction
+        self.get_direction()
 
 
 class Coin():
