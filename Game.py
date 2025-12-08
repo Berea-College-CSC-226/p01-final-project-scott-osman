@@ -44,6 +44,9 @@ class Game:
         # Creates the score
         self.score = Score()
 
+        #Checks to see if the game is over
+        self.game_over = False
+
     def game_time(self):
         # The loop keeps running as long as self.run is True.
         while self.run:
@@ -56,6 +59,10 @@ class Game:
 
 
             # Detects which keys are currently being pressed.
+            if self.game_over:
+                self.display_game_over()
+                pygame.display.update()
+                continue
             keys = pygame.key.get_pressed()
 
             # Moves the player based on the pressed keys.
@@ -71,7 +78,7 @@ class Game:
 
 
             if self.timer.time_left == 0:
-                self.run = False
+                self.game_over = True
 
             # Fills the screen with white (resets background each frame).
             self.screen.fill((255, 255, 255))
@@ -118,6 +125,12 @@ class Game:
 
         # When the loop ends, pygame shuts down.
         pygame.quit()
+
+
+    def display_game_over(self):
+        font = pygame.font.SysFont("arial", 30)
+        txt = font.render("GAME OVER", True, (0, 0, 0))
+        self.screen.blit(txt, (self.size[0]//2-50, self.size[1]-50))
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
@@ -270,7 +283,9 @@ class Score:
 
 def main():
     game = Game()   # Creates the Game object.
-    game.game_time()  # Starts the main game loop.
+    game.game_time() # Starts the main game loop.
+
+
 
 # Makes sure the game only runs if this file is executed directly.
 if __name__ == "__main__":
