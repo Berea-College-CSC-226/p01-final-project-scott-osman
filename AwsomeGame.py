@@ -84,7 +84,7 @@ class Game:
             # Fills the screen with white (resets background each frame).
             self.screen.fill((255, 255, 255))
 
-            #This calls the NPC movment while also making sure to update the new ones to the screen
+            #This calls the NPC movement while also making sure to update the new ones to the screen
             for npc in self.npcs:
                 npc.movement()
                 self.screen.blit(npc.surf, (npc.x, npc.y))
