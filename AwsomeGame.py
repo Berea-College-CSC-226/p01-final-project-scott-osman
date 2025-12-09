@@ -133,7 +133,7 @@ class Game:
         subfont = pygame.font.SysFont("arial", 80)
         txt = font.render("GAME OVER", True, (0, 0, 0))
         self.screen.blit(txt, (self.size[0]//2-300, self.size[1]-500))
-        score_txt = subfont.render("Final Score:", True, (0, 0, 0))
+        score_txt = subfont.render("Final Score: " + str(self. score.value), True, (0, 0, 0))
         self.screen.blit(score_txt, (self.size[0]//2-300, self.size[1]-300))
 
 class Player(pygame.sprite.Sprite):
@@ -288,7 +288,6 @@ class Score:
 def main():
     game = Game()   # Creates the Game object.
     game.game_time() # Starts the main game loop.
-
 
 
 # Makes sure the game only runs if this file is executed directly.
