@@ -140,11 +140,11 @@ class Game:
         font = pygame.font.SysFont("arial", 80)
         subfont = pygame.font.SysFont("arial", 40)
         txt = font.render("GAME OVER", True, (0, 0, 0))
-        self.screen.blit(txt, (self.size[0]//2-300, self.size[1]-500))
+        self.screen.blit(txt, (self.size[0]//2-200, self.size[1]-500))
         score_txt = font.render("Final Score: " + str(self. score.value), True, (0, 0, 0))
-        self.screen.blit(score_txt, (self.size[0]//2-300, self.size[1]-300))
+        self.screen.blit(score_txt, (self.size[0]//2-200, self.size[1]-300))
         restart_txt = subfont.render("Press R to restart", True, (0, 0, 0))
-        self.screen.blit(restart_txt, (self.size[0]//2-300, self.size[1]-100))
+        self.screen.blit(restart_txt, (self.size[0]//2-200, self.size[1]-100))
 
 #Sets everything to its default state so the game can restart
     def restart(self):

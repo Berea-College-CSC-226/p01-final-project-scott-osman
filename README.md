@@ -9,7 +9,7 @@
 
 ## Milestone 1: Setup, Planning, Design
 
-️**Title**: Give me the coins
+️**Title**: Don't get Caught
 
 **Purpose**: Get as many coins in the timeframe that you can.
 
@@ -50,6 +50,7 @@ section as you go. DO NOT forget about it!
 https://www.programiz.com/python-programming/time
 https://www.bing.com/videos/riverview/relatedvideo?q=how+to+create+boundries+in+python&mid=F079186172C5B21E8B9BF079186172C5B21E8B9B&FORM=VIRE
 https://www.pygame.org/docs/ref/rect.html
+https://www.pythontutorial.net/python-basics/python-continue/
 ---
 
 ## Milestone 2: Code Setup and Issue Queue
@@ -87,14 +88,15 @@ Indicate what percentage of the project you have left to complete and how confid
 
 ## Milestone 4: Final Code, Presentation, Demo
 
-### ❗User Instructions
+### User Instructions
 
-❗In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
+In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
 in PyCharm. 
 
-    **
+    **You will be hit by a start up screen, hit the space button to begin the game. When the game begins use the arrow keys to move and collect coins.
+    **Make sure to avoid the other people on the screen or you will lose. Collect as many coins as possible before the time runs out.
 
-### ❗Errors and Constraints
+### Errors and Constraints
 
 ❗Every program has bugs or features that had to be scrapped for time. These bugs should be tracked in the issue queue. 
 You should already have a few items in here from the prior weeks. Create a new issue for any undocumented errors and 
