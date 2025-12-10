@@ -34,7 +34,7 @@ class Game:
         self.spawn_timer = 0
 
 
-        self.timer = Timer(30)
+        self.timer = Timer(45)
         #Creates the timer object
 
         # Creates the score
@@ -81,7 +81,7 @@ class Game:
             #Adding NPCS
             self.spawn_timer += 1
             #Seems to be around 5 seconds
-            if self.spawn_timer > 900:
+            if self.spawn_timer > 600:
                 self.spawn_timer = 0
                 self.npcs.append(NPC())
 
@@ -152,7 +152,7 @@ class Game:
         self.coin = Coin()
         self.npcs = [NPC()]
         self.spawn_timer = 0
-        self.timer = Timer(30)
+        self.timer = Timer(45)
         self.score = Score()
         self.game_over = False
 
