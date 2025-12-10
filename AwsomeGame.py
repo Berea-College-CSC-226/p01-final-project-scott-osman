@@ -159,7 +159,7 @@ class Game:
     def display_start_screen(self):
         font = pygame.font.SysFont("arial", 50)
         start_txt = font.render("Press the Spacebar to Begin", True, (0,0,0))
-        game_title = font.render("Welcome to Don't get caught", True, (0,0,0))
+        game_title = font.render('''Welcome to "Don't get caught"''', True, (0,0,0))
         self.screen.fill((255, 255, 255))
         self.screen.blit(game_title, (self.size[0]//2-250, self.size[1] //2 -150))
         self.screen.blit(start_txt, (self.size[0] // 2 -250, self.size[1] // 2 + 100))
