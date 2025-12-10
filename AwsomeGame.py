@@ -43,6 +43,9 @@ class Game:
         #Checks to see if the game is over
         self.game_over = False
 
+        #Checks to see if the game has started
+        self.game_started = False
+
     def game_time(self):
         # The loop keeps running as long as self.run is True.
         while self.run:
@@ -51,6 +54,10 @@ class Game:
                 # If the player clicks the X button, stop the loop.
                 if event.type == pygame.QUIT:
                     self.run = False
+            if not self.game_started:
+                self.display_start_screen()
+                #Keeps the rest of the game from functioning
+                continue
 
 
             #Checks to see if game_over == True
@@ -127,6 +134,8 @@ class Game:
         pygame.quit()
 
 
+
+
     def display_game_over(self):
         font = pygame.font.SysFont("arial", 80)
         subfont = pygame.font.SysFont("arial", 40)
@@ -146,6 +155,23 @@ class Game:
         self.timer = Timer(30)
         self.score = Score()
         self.game_over = False
+
+    def display_start_screen(self):
+        font = pygame.font.SysFont("arial", 50)
+        start_txt = font.render("Press the Spacebar to Begin", True, (0,0,0))
+        game_title = font.render("Welcome to Don't get caught", True, (0,0,0))
+        self.screen.fill((255, 255, 255))
+        self.screen.blit(game_title, (self.size[0]//2-250, self.size[1] //2 -150))
+        self.screen.blit(start_txt, (self.size[0] // 2 -250, self.size[1] // 2 + 100))
+        pygame.display.update()
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_SPACE]:
+            self.game_started = True
+
+
+
+
+
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
