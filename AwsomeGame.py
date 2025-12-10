@@ -1,13 +1,8 @@
-'''
+####################
+#Authors:Osman and Scott
 
-   Subtask I: Create a screen and display, player,coin,NPC, and the screen.
-        Subtast I.A: Load an image of a sprite for the player, NPC, and coin(could just draw a yellow circle)
-            Subtask I.A.1: Import turtle,pygames, and random.*
-            Subtask I.A.2: Choose an image or create one.*
-            Subtask I.A.3: Display them on screen.*
-            Subtask I.A.4: Use turtle.screen to create a screen.*
-            Subtask I.A.5: Set screen width and height.*
-'''
+####################
+
 
 
 import pygame, time, random
@@ -27,7 +22,7 @@ class Game:
         # Boolean that controls whether the game loop is running.
         self.run = True
 
-        # Creates an player object .
+        # Creates a player object .
         self.player = Player()
 
         # creating coin and player objects
@@ -35,6 +30,7 @@ class Game:
 
         #Initialize the NPC as a list so it can hold all of the ones created. Not sure how to do it otherwise.
         self.npcs = [NPC()]
+        #Made the NPC call into a list
         self.spawn_timer = 0
 
 
@@ -57,13 +53,18 @@ class Game:
                     self.run = False
 
 
-
-            # Detects which keys are currently being pressed.
+            #Checks to see if game_over == True
             if self.game_over:
                 self.screen.fill((255,255,255))
                 self.display_game_over()
+                #Allows the player to restart by pressing r
+                keys = pygame.key.get_pressed()
+                if keys[pygame.K_r]:
+                    self.restart()
                 pygame.display.update()
                 continue
+
+            # Detects which keys are currently being pressed.
             keys = pygame.key.get_pressed()
 
             # Moves the player based on the pressed keys.
@@ -99,12 +100,10 @@ class Game:
             self.screen.blit(self.coin.surf, (self.coin.x, self.coin.y))
             self.coin.rect.topleft = (self.coin.x, self.coin.y)
 
-            #Tests to see if collisions are working
+            #Tests to see if collisions are working and will end game upon collision
             for npc in self.npcs:
                 if pygame.sprite.collide_rect(self.player, npc):
-                    font = pygame.font.SysFont("arial", 30)
-                    txt = font.render("oooohhh", True, (0, 0, 0))
-                    self.screen.blit(txt, (self.size[0]//2-50, self.size[1]-50))
+                    self.game_over = True
 
             #Coin collision
             if pygame.sprite.collide_rect(self.player, self.coin):
@@ -130,11 +129,23 @@ class Game:
 
     def display_game_over(self):
         font = pygame.font.SysFont("arial", 80)
-        subfont = pygame.font.SysFont("arial", 80)
+        subfont = pygame.font.SysFont("arial", 40)
         txt = font.render("GAME OVER", True, (0, 0, 0))
         self.screen.blit(txt, (self.size[0]//2-300, self.size[1]-500))
-        score_txt = subfont.render("Final Score: " + str(self. score.value), True, (0, 0, 0))
+        score_txt = font.render("Final Score: " + str(self. score.value), True, (0, 0, 0))
         self.screen.blit(score_txt, (self.size[0]//2-300, self.size[1]-300))
+        restart_txt = subfont.render("Press R to restart", True, (0, 0, 0))
+        self.screen.blit(restart_txt, (self.size[0]//2-300, self.size[1]-100))
+
+#Sets everything to its default state so the game can restart
+    def restart(self):
+        self.player = Player()
+        self.coin = Coin()
+        self.npcs = [NPC()]
+        self.spawn_timer = 0
+        self.timer = Timer(30)
+        self.score = Score()
+        self.game_over = False
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
@@ -150,7 +161,7 @@ class Player(pygame.sprite.Sprite):
 
         # Starting x and y position of the player.
         self.x = 250
-        self.y = 250
+        self.y = 450
 
         # How many pixels the player moves each frame.
         self.speed = 3
