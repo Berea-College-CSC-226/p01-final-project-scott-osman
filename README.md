@@ -49,6 +49,7 @@ section as you go. DO NOT forget about it!
  https://youtu.be/y9VG3Pztok8?si=jwzufsW2BG0BC3QP 
 https://www.programiz.com/python-programming/time
 https://www.bing.com/videos/riverview/relatedvideo?q=how+to+create+boundries+in+python&mid=F079186172C5B21E8B9BF079186172C5B21E8B9B&FORM=VIRE
+https://www.pygame.org/docs/ref/rect.html
 ---
 
 ## Milestone 2: Code Setup and Issue Queue

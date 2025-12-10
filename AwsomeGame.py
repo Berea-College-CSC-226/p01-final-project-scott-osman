@@ -156,7 +156,7 @@ class Player(pygame.sprite.Sprite):
         self.surf = pygame.transform.scale(original_image, (135, 135))
 
         self.rect = self.surf.get_rect()
-        #self.rect.move_ip(100,100)
+        self.rect = self.rect.inflate(-40, -40)
 
 
         # Starting x and y position of the player.
@@ -164,7 +164,7 @@ class Player(pygame.sprite.Sprite):
         self.y = 450
 
         # How many pixels the player moves each frame.
-        self.speed = 3
+        self.speed = 2
 
 
     # Movement function for player
@@ -205,6 +205,7 @@ class NPC(pygame.sprite.Sprite):
         self.surf = pygame.transform.scale(original_image, (40, 60))
         # Get rect
         self.rect = self.surf.get_rect()
+        self.rect = self.rect.inflate(-30, -30)
 
         # Starting position
         self.x = 400
@@ -218,11 +219,11 @@ class NPC(pygame.sprite.Sprite):
         #Send in the other direction if on the wall to keep character confined within the screen
         if self.y <= 0:
             self.path = 'south'
-        elif self.y >= 500:
+        elif self.y >= 540:
             self.path = 'north'
         elif self.x <= 0:
             self.path = 'east'
-        elif self.x >= 600:
+        elif self.x >= 720:
             self.path = 'west'
         #Chances of them switching direction
         elif random.random() > .97:
@@ -251,6 +252,7 @@ class Coin():
         self.surf = pygame.transform.scale(original_image, (30, 30))
 
         self.rect = self.surf.get_rect()
+        self.rect = self.rect.inflate(-40, -40)
 
         # Starting x and y position of the player.
         self.x = 120
