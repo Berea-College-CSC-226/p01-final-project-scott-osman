@@ -35,14 +35,19 @@ and describe how you integrated the ideas or code into your program. This includ
 helped you, AI tools you've used, and any other resources that are not solely your own contribution. Update this 
 section as you go. DO NOT forget about it!
 
- https://youtu.be/y9VG3Pztok8?si=jwzufsW2BG0BC3QP 
+An introduction to pygame to get a grasp on it.
+https://youtu.be/y9VG3Pztok8?si=jwzufsW2BG0BC3QP 
 
+To help create a timer that works.
 https://www.programiz.com/python-programming/time
 
+To help create boundries so the player and NPC cant run out of it.
 https://www.bing.com/videos/riverview/relatedvideo?q=how+to+create+boundries+in+python&mid=F079186172C5B21E8B9BF079186172C5B21E8B9B&FORM=VIRE
 
+To figure out how to shrink the rectangle.
 https://www.pygame.org/docs/ref/rect.html
 
+How to use the continue statement so that only one part of the code runs at once.
 https://www.pythontutorial.net/python-basics/python-continue/
 ---
 

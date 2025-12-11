@@ -17,7 +17,7 @@ class Game:
         self.screen = pygame.display.set_mode(self.size)
 
         # Sets the title text that appears at the top of the window.
-        pygame.display.set_caption("NPC Movement Game")
+        pygame.display.set_caption("Don't get Caught")
 
         # Boolean that controls whether the game loop is running.
         self.run = True
@@ -28,9 +28,10 @@ class Game:
         # creating coin and player objects
         self.coin = Coin()
 
-        #Initialize the NPC as a list so it can hold all of the ones created. Not sure how to do it otherwise.
+        #Initialize the NPC as a list so it can hold all of the ones created. This is created this way so we can append the other NPC's that come off into a list of them
         self.npcs = [NPC()]
         #Made the NPC call into a list
+
         self.spawn_timer = 0
 
 
@@ -80,12 +81,12 @@ class Game:
 
             #Adding NPCS
             self.spawn_timer += 1
-            #Seems to be around 5 seconds
+            #Appends them to the list we initially call and resets the spawn timer:)
             if self.spawn_timer > 600:
                 self.spawn_timer = 0
                 self.npcs.append(NPC())
 
-
+            #Ends game if timer hits zero
             if self.timer.time_left == 0:
                 self.game_over = True
 
@@ -135,7 +136,7 @@ class Game:
 
 
 
-
+    #Nothing crazy, just makes the text and blits it to a screen
     def display_game_over(self):
         font = pygame.font.SysFont("arial", 80)
         subfont = pygame.font.SysFont("arial", 40)
@@ -156,6 +157,7 @@ class Game:
         self.score = Score()
         self.game_over = False
 
+
     def display_start_screen(self):
         font = pygame.font.SysFont("arial", 50)
         start_txt = font.render("Press the Spacebar to Begin", True, (0,0,0))
@@ -163,6 +165,7 @@ class Game:
         self.screen.fill((255, 255, 255))
         self.screen.blit(game_title, (self.size[0]//2-250, self.size[1] //2 -150))
         self.screen.blit(start_txt, (self.size[0] // 2 -250, self.size[1] // 2 + 100))
+        #The program wasent working until this was added in there
         pygame.display.update()
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE]:
@@ -182,6 +185,7 @@ class Player(pygame.sprite.Sprite):
         self.surf = pygame.transform.scale(original_image, (135, 135))
 
         self.rect = self.surf.get_rect()
+        #Shrinks rectangle
         self.rect = self.rect.inflate(-40, -40)
 
 
@@ -287,12 +291,13 @@ class Coin():
 class Timer:
      def __init__(self, start):
         self.time_left = start
-        #Makes the start the value listed when calling this class in the game(right now 30)
+        #Makes the start the value listed when calling this class in the game(right now 45)
         self.time = time.time()
-        #Saves the current number of seconds passing
+        #Saves the current number of seconds passing using time
      def update(self):
         current_time = time.time()
         #Records the current time it actually is, which is why the countdown works.
+        #What this if statement is doing is saying that if the current_time is different from the initial time it held by 1 it will lower the timer. I now understand I could have used sleep instead of this however I dont want to break it.
         if current_time - self.time >= 1:
             self.time_left -= 1
             self.time = current_time
