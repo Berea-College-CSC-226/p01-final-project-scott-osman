@@ -113,9 +113,24 @@ deficiencies that remain in your code. Bugs found that aren't acknowledged in th
 - How well did you work with your partner? What made it go well? What made it challenging?
 
 ```
-    Partner 1: **Replace this with your reflection
+    We selected this project out of fun, we looked at the Tuna game as asked our selves how can we make this game better 
+    by adding more NPC and increasing the game speed etc. 
+    Our project i could say is closely with what we imagine it to be, it just that we could have made more visually appealing to users
+    but we instead focus on making sure it works correctly and avoid as many bugs as possible. 
+    I learn alot about how classes and objects works and how code at large scale is being managed. 
+    The hardest part was on creating the coalition between the NPC and the player so they donn't run into eachother. 
+    We would try to write the code using a seperate file for each class so that we can easily access it when necessary. Also, we could design the 
+    and entire the program to enhance user experience. 
+    I was able to work with Patrick preety well. He always communicate every things he does on the code and i do the same as well. And we understand 
+    eachother milestone on the project and we are supposed to do at it point in time. Some of the challanges we faced is been able to meet to work together in person. 
+    We had differnt work schedule so that was a big challange. 
+    
+    
+    
+    
+    
 ```
-
+ 
 ```
     Partner 2: **Replace this with your reflection
 ```
